@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Electrolize-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://IMG-20250505-WA0011.png" type="Texture" id=2]
+[ext_resource path="res://IMG-20250504-WA0004.jpg" type="Texture" id=3]
+[ext_resource path="res://dog-1.png" type="Texture" id=4]
+[ext_resource path="res://script_splash.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 81
+font_data = ExtResource( 1 )
+
+[node name="Splash" type="Node2D"]
+position = Vector2( -2, 6 )
+script = ExtResource( 5 )
+
+[node name="Img-20250504-Wa0004" type="Sprite" parent="."]
+position = Vector2( 896, 898.5 )
+scale = Vector2( 2.66211, 1.87402 )
+texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 294, 184 )
+scale = Vector2( 1.59466, 1.39564 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 263, 103, 109 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 1145, 191 )
+scale = Vector2( 2.46591, 2.5 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 284, 195, 44, 76 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 459.0
+margin_top = 139.0
+margin_right = 994.0
+margin_bottom = 236.0
+custom_fonts/font = SubResource( 1 )
+text = "CÃO BRANDO"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="trocar_tela"]

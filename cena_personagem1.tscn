@@ -1,0 +1,150 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://dog-1.png" type="Texture" id=1]
+[ext_resource path="res://script_dog.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Rect2( 185, 885, 101, 110 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "ataque"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 16, 263, 103, 109 ), Rect2( 187, 263, 109, 110 ), Rect2( 356, 263, 110.149, 109 ), Rect2( 522, 263, 103, 109 ), Rect2( 714, 263, 105, 109 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "death"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 16, 469, 103, 110 ), Rect2( 189, 492, 128, 86 ), Rect2( 356, 540, 147, 38 ), Rect2( 523, 547, 153, 32 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "idle"
+length = 0.7
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 16, 887, 103, 108 ), Rect2( 185, 885, 101, 110 ), Rect2( 354, 885, 103, 110 ), Rect2( 520, 886, 105, 109 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "pulando"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Rect2( 535, 68, 122, 104 ), Rect2( 189, 73, 132, 99 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "run"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Rect2( 12, 76, 141, 96 ), Rect2( 189, 73, 132, 99 ), Rect2( 364, 69, 126, 98 ), Rect2( 535, 68, 122, 104 ), Rect2( 674, 71, 152, 101 ), Rect2( 845, 76, 149, 94 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 55, 54.5 )
+
+[node name="Personagem1" type="Node2D"]
+position = Vector2( 532, 296 )
+
+[node name="Personagem" type="KinematicBody2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Personagem"]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 185, 885, 101, 110 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Personagem"]
+anims/RESET = SubResource( 2 )
+anims/ataque = SubResource( 3 )
+anims/death = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/pulando = SubResource( 7 )
+anims/run = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Personagem"]
+position = Vector2( -1, -0.5 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="Personagem"]
+position = Vector2( 2, 2 )
+
+[node name="Position2D" type="Position2D" parent="Personagem"]
+position = Vector2( 56, -26 )
+
+[node name="RayCast2DMaoEsq" type="RayCast2D" parent="Personagem"]
+position = Vector2( -56, -11 )
+cast_to = Vector2( -49, 0 )
+collision_mask = 8
+
+[node name="RayCast2DMaoDir" type="RayCast2D" parent="Personagem"]
+position = Vector2( 56, -11 )
+cast_to = Vector2( 66, 0 )
+collision_mask = 8
+
+[node name="Boca" type="Node2D" parent="Personagem"]
+position = Vector2( 65, -26 )
+
+[node name="PontoDisparo" type="Position2D" parent="Personagem"]
+
+[connection signal="animation_finished" from="Personagem/AnimationPlayer" to="Personagem" method="animacao_finalizada"]
