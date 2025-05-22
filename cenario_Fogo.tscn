@@ -18,6 +18,7 @@ position = Vector2( -5.10714, 2.75 )
 scale = Vector2( 0.842857, 0.842857 )
 texture = ExtResource( 1 )
 flip_h = true
+flip_v = true
 region_enabled = true
 region_rect = Rect2( 116, 336, 65, 35 )
 

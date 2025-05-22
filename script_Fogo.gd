@@ -1,17 +1,17 @@
 extends KinematicBody2D
 
 var aceleracaoX = 550
-var direcao = -1
+var direcao = 1
 var velocidade  = Vector2.ZERO
 
 func _ready():
 	pass
 
 func _process(delta):
-	velocidade.x = direcao * aceleracaoX
 	if (direcao==1):
-		$Sprite.flip_h = true
-	
+		velocidade.x = direcao * aceleracaoX
+		$Sprite.flip_h = false
+		
 	verificar_colisao()
 	
 	move_and_slide(velocidade)

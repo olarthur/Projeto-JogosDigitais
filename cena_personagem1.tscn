@@ -104,7 +104,7 @@ tracks/0/keys = {
 extents = Vector2( 55, 54.5 )
 
 [node name="Personagem1" type="Node2D"]
-position = Vector2( 532, 296 )
+position = Vector2( 510, 294 )
 
 [node name="Personagem" type="KinematicBody2D" parent="."]
 script = ExtResource( 2 )
