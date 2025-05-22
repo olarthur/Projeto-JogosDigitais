@@ -15,23 +15,23 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 3421.0
-margin_bottom = 1540.0
+margin_right = 1030.0
+margin_bottom = 601.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 399.0
-margin_top = 139.0
-margin_right = 1194.0
-margin_bottom = 217.0
+margin_left = 148.0
+margin_top = 73.0
+margin_right = 943.0
+margin_bottom = 151.0
 custom_fonts/font = SubResource( 1 )
 text = "OBRIGADO POR JOGAR!!!!"
 
 [node name="Button" type="Button" parent="."]
-margin_left = 417.0
-margin_top = 426.0
-margin_right = 1137.0
-margin_bottom = 639.0
+margin_left = 168.0
+margin_top = 251.0
+margin_right = 888.0
+margin_bottom = 464.0
 custom_fonts/font = SubResource( 2 )
 text = "APERTE PARA VOLTAR AO MENU"
 

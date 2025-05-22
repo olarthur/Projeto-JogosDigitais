@@ -15,29 +15,29 @@ position = Vector2( -2, 6 )
 script = ExtResource( 5 )
 
 [node name="Img-20250504-Wa0004" type="Sprite" parent="."]
-position = Vector2( 896, 898.5 )
-scale = Vector2( 2.66211, 1.87402 )
+position = Vector2( 516, 295.5 )
+scale = Vector2( 1.00586, 0.584961 )
 texture = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 294, 184 )
+position = Vector2( 145, 344 )
 scale = Vector2( 1.59466, 1.39564 )
 texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 16, 263, 103, 109 )
 
 [node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 1145, 191 )
+position = Vector2( 920, 325 )
 scale = Vector2( 2.46591, 2.5 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 284, 195, 44, 76 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 459.0
-margin_top = 139.0
-margin_right = 994.0
-margin_bottom = 236.0
+margin_left = 243.0
+margin_top = 94.0
+margin_right = 778.0
+margin_bottom = 191.0
 custom_fonts/font = SubResource( 1 )
 text = "CÃO BRANDO"
 
